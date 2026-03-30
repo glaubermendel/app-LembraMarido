@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembra Marido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🛒 Lembra Marido</h1>
+    
+    <!-- Tela Principal -->
+    <div id="mainScreen">
+        <input id="listName" placeholder="Nome da lista (ex: Compras Mercado)" maxlength="50">
+        <button onclick="createList()">📝 Criar Nova Lista</button>
+        <button onclick="showLists()">📋 Minhas Listas</button>
+    </div>
+
+    <!-- Criar/Editar Lista -->
+    <div id="createScreen" class="hidden">
+        <h2 id="screenTitle">Criar Lista</h2>
+        <input id="itemInput" placeholder="Digite um item (ex: leite)" onkeypress="if(event.key==='Enter') addItem()">
+        <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
+        <img id="preview" class="hidden">
+        <ul id="itemList"></ul>
+        <div class="buttons">
+            <input id="whatsappNumber" placeholder="Número WhatsApp (ex: 5511999999999)" value="5511999999999">
+            <button onclick="sendWhatsApp()">📱 Enviar WhatsApp</button>
+            <button onclick="saveList()">💾 Salvar Lista</button>
+            <button onclick="backToMain()">← Voltar</button>
+        </div>
+    </div>
+
+    <!-- Visualizar Listas -->
+    <div id="listsScreen" class="hidden">
+        <h2>Minhas Listas</h2>
+        <div id="listsContainer"></div>
+        <button onclick="backToMain()">← Voltar</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
