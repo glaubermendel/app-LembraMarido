@@ -19,7 +19,9 @@
     <!-- Criar/Editar Lista -->
     <div id="createScreen" class="hidden">
         <h2 id="screenTitle">Criar Lista</h2>
-        <input id="itemInput" placeholder="Digite um item (ex: leite)" onkeypress="if(event.key==='Enter') addItem()">
+      <input id="itemInput" placeholder="Digite um item (ex: leite)" 
+       onkeydown="handleEnter(event)" 
+       onsubmit="addItem(); return false;">
         <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
         <img id="preview" class="hidden">
         <ul id="itemList"></ul>

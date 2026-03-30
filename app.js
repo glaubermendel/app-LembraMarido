@@ -173,6 +173,13 @@ function backToMain() {
     itemList.innerHTML = '';
 }
 
+function handleEnter(event) {
+    if (event.key === 'Enter' || event.keyCode === 13 || event.which === 13) {
+        event.preventDefault();  // Impede "Next" pular campo
+        addItem();
+    }
+}
+
 // Carrega ao iniciar
 window.onload = () => {
     renderItems();
